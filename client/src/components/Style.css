@@ -1,0 +1,109 @@
+
+.Link{
+
+    margin: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: 650;
+    font-size: large;
+}
+
+#A{
+
+  background: #f990ff;
+
+}
+
+#S > input{
+    height: 40px;
+    width: 80%;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid gray;
+    margin-top: 10px;
+    margin-left: 40px;
+  }
+
+
+  .testbutton {
+    font-family: arial;
+    font-weight: bold;
+    color: white !important;
+    font-size: 18px;
+    text-shadow: 0px 0px 0px #7CACDE;
+    
+    padding: 5px 25px;
+    margin-top: 15px;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(3, 79, 255);
+    background: rgb(3, 62, 255);
+  }
+  .testbutton:hover {
+    color: white !important;
+    background: rgb(47, 100, 248);
+  }
+
+  #L > input{
+    height: 40px;
+    width: 80%;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid gray;
+    margin-top: 10px;
+    margin-left: 40px;
+  }
+
+  .testbutton1 {
+    font-family: arial;
+    font-weight: bold;
+    color: white !important;
+    font-size: 18px;
+    text-shadow: 0px 0px 0px #7CACDE;
+    
+    padding: 5px 25px;
+    margin-top: 15px;
+    margin-left: 25px;
+    border-radius: 10px;
+    border: 2px solid rgb(3, 79, 255);
+    background: rgb(3, 62, 255);
+  }
+  .testbutton1:hover {
+    color: white !important;
+    background: rgb(47, 100, 248);
+  }
+
+
+
+@media all and (max-width:500px){
+
+  #S > input{
+    height: 50px;
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .testbutton {
+  
+    padding: 5px 25px;
+    margin-top: 15px;
+    margin-left: 0px;
+   
+  }
+
+  #L > input{
+    height: 50px;
+    width: 100%;
+    margin-left: 0px;
+  }
+  .testbutton1 {
+  
+    padding: 5px 25px;
+    margin-top: 15px;
+    margin-left: 5px;
+   
+  }
+
+}
