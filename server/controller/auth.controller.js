@@ -1,29 +1,56 @@
+let bcrypt = require("bcrypt");
 const logindata = require("../model/login.model");
-const signupdata = require("../model/signup.model")
+const signupdata = require("../model/signup.model");
+let jwt = require("jsonwebtoken");
+const generatetoken = require("../lib/generatetoken");
 
 module.exports = {
 
     signup : async (req,res)=>{
 
-        let {username,email,password} = req.body
+        try{
+
+            let {username,email,password} = req.body
+
+        let hashedpassword = await bcrypt.hash(password,10);
 
         let exist = await signupdata.findOne({email:email});
 
         if (exist) {
             
-            res.send("User Already exist")
+            return res.json({
+                status:false,
+                "msg":"User Already Exist"
+            })
 
         }
         else{
 
-            signupdata.create({username:username,email:email,password:password})
+            signupdata.create({username:username,email:email,password:hashedpassword})
             .then(()=>{
-                res.send("Account Created!")
+                return res.json({
+                    status:true,
+                    "msg":"Account Created"
+                })
             })
             .catch(()=>{
-                res.send("OOPS! Error")
+                return res.json({
+                    status:false,
+                    "msg":"Error to signup"
+                })
             })
         }
+
+        }
+        catch(e){
+
+            console.log("Error occured in Auth Controller");
+            res.send("Error Occured in auth controller")
+            
+
+        }
+
+        
         
         
     },
@@ -31,28 +58,68 @@ module.exports = {
 
     login : async (req,res)=>{
 
-        let {email,password} = req.body
+
+        try {
+
+            let {email,password} = req.body
 
         let exist = await signupdata.findOne({email:email});
 
-        if (exist) {
+
+        if (!exist) {
+            
+            return res.json({
+                status:false,
+                "msg":"Invalid Email"
+            })
+        }
+         
+
+         let verification = await bcrypt.compare(password,exist.password)
 
 
-            res.send("Logged in successfully")
+         if (verification) {
 
-            // logindata.create({email:email,password:password})
-            // .then(()=>{
-            //     res.send("Logged in")
-            // })
-            // .catch(()=>{
-            //     res.send("Error")
-            // })
+            let {username} = exist
+
+            // wait for token generation
+
+            let token = await generatetoken(username);
+
+            // set JWT in HTTP-only cookie
+
+            res.cookie("authtoken", token, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === "production",
+                sameSite: "Strict",
+                maxAge: 5 * 60 * 60 * 1000  // 5 hours
+
+            });
+            
+            return res.json({
+                status:true,
+                "msg":"Login Successfull"
+            })
+         }
+         else{
+
+            return res.json({
+                status:false,
+                "msg":"Password Incorrect"
+            })
+         }
+            
+        } catch (error) {
+            
+            res.send("Error occured in login controller");
+            console.log("Error in login controller");
             
         }
-        else{
 
-            res.send("User doesn't Exist")
+        
 
-        }
+     
     }
 }
+
+

@@ -10,8 +10,8 @@ let Connectdb = ()=>{
         console.log("Database is connected to server");
         
     })
-    .catch(()=>{
-        console.log("Error in connecting Database");
+    .catch((e)=>{
+        console.log("Error in connecting Database",e);
         
     })
 

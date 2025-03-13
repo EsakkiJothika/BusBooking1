@@ -3,7 +3,7 @@ import Logslide from '../components/login/Logslide'
 
 const Loginpage = () => {
   return (
-    <div>
+    <div className='sb'>
       <Logslide />
     </div>
   )

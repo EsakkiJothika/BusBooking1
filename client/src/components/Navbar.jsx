@@ -1,20 +1,25 @@
 import React from 'react'
 import "./Style.css"
 import { Link } from 'react-router-dom'
+import e from "../assets/images/logo2.png"
 
 const Navbar = () => {
   return (
-    <div id='A'>
-      <div className="row justify-content-around">
-        <div className="col-sm-4 col-md-5  mt-2 mb-2 col-lg-5">
-            <h1>JS Travels</h1>
+    <div >
+      <div id='A' className="row justify-content-around ">
+        <div className="col-sm-1">
+        <img src={e} alt="" className='img-fluid' style={{height:"90px"}}/>
         </div>
-        <div className="col-sm-4 me-5 col-md-5  col-lg-4 align-self-center">
-            <nav>
-                <Link className='Link' to={'/'}>Home</Link>
-                <Link className='Link' to={'/travelguide'}>Travel guide</Link>
-                <Link className='Link' to={'/contact'}>Contact</Link>
-                <Link className='Link' to={'/signup'}>Signup</Link>
+          <div className="col-sm-4 col-md-5  mt-3 mb-1 col-lg-5">
+          
+          <h1 >BusBuddy</h1>
+        </div>
+        <div className="col-sm-4 me-4 mb-1 col-md-5  col-lg-5 align-self-center">
+            <nav className='Navb'>
+                <Link className='Link' to={'/'}><button className='lb'>Home</button></Link>
+                <Link className='Link' to={'/bookticket'}><button className='lb'>BookTicket</button></Link>
+                <Link className='Link' to={'/contact'}><button className='lb'>Contact</button></Link>
+                <Link className='Link' to={'/login'}><button className='lb'>Login</button></Link>
             </nav>
         </div>
       </div>

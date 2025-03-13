@@ -1,19 +1,24 @@
 let express = require("express");
-const AR = require("./module/auth.module");
 const Connectdb = require("./lib/db.connect");
-const LD = require("./module/auth.module");
-let cors = require("cors")
+let cors = require("cors");
+const authrouter = require("./module/auth.module");
+const busrouter = require("./module/bus.module");
 
 let app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+}));
 
 Connectdb()
 
-app.use("/auth",AR)
+app.use("/auth",authrouter)
 
-app.use("/auth",LD)
+app.use("/bus",busrouter)
+
+
 
 app.listen(4000,()=>{
 

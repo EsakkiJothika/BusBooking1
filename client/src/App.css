@@ -1,0 +1,36 @@
+body {
+    /* background-image: url('./assets/images/bg1.jpg'); */
+    /* background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1124&amp;q=100'); */
+    /* background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh; */
+  }
+  
+
+#Dnav{
+
+  display: block;
+  /* position: sticky;
+  top: 0px;
+  z-index: 1 !important; */
+
+}
+#Navm{
+
+  display: none;
+}
+
+
+@media all and (max-width:1200px){
+
+  #Dnav{
+    display: none;
+  }
+  #Navm{
+
+    display: block;
+  }
+}
