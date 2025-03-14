@@ -12,7 +12,7 @@ app.use(cors({
     credentials: true
 }));
 
-Connectdb();
+Connectdb()
 
 app.use("/auth",authrouter)
 
