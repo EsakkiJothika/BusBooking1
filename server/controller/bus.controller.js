@@ -4,9 +4,10 @@ module.exports = {
 
     addbus : async(req,res)=>{
 
-        let {from,to,date,travelsname,utilities,bustype,seats,windowseats,price,rating} = req.body
+        let {from,to,date,travelsname,ownername,ownernumber,drivername,drivernumber,starttime,endtime,snacks,water,tv,blanket,chargeport,bustype,seats,windowseats,price,rating} = req.body
 
-        busdetails.create({from:from,to:to,date:date,travelsname:travelsname,utilities:utilities,bustype:bustype,seats:seats,windowseats:windowseats,price:price,rating:rating})
+        busdetails.create({from:from,to:to,date:date,travelsname:travelsname,ownername:ownername,ownernumber:ownernumber,drivername:drivername,drivernumber:drivernumber,starttime:starttime,endtime:endtime,snacks:snacks,water:water,tv:tv,blanket:blanket,chargeport:chargeport,bustype:bustype,seats:seats,windowseats:windowseats,price:price,rating:rating})
+
         .then((d)=>{
             res.json({
                 status:true,

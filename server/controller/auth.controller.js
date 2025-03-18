@@ -119,6 +119,46 @@ module.exports = {
         
 
      
+    },
+
+    isAuthCheck : async (req,res)=>{
+        try {
+
+            let token = req.cookies.authtoken;
+
+            if(!token){
+                return res.json({status:false, msg: "Not Authenticated"})
+            }
+
+            let decoded = jwt.verify(token,process.env.JWTSECRETKEY);
+
+            if(!decoded){
+                return res.json({status: false, msg: "Invalid Token"})
+            }
+
+            let user = await signupdata.findOne({username:decoded.username})
+
+            if(!user){
+                return res.json({status: false, msg: "User Not Found"})
+            }
+
+            return res.json({
+                status: true,
+                user: {username: user.username, email: user.email}
+            });
+            
+        } 
+        catch (error) {
+
+            console.error("Auth Check Error:",error);
+            res.status(500).json({status: false, msg: "Server Error"})
+            
+        }
+    },
+
+    logout : (req, res)=>{
+        res.clearCookie("authtoken");
+        res.json({ status: true, msg: "Logged Out Successfully" });
     }
 }
 

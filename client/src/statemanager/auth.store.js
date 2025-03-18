@@ -4,6 +4,7 @@ import axios from "axios";
 
 export let Authstore = create((set)=>({
 
+  user: null,
 
   message:{status:false},
 
@@ -41,6 +42,8 @@ export let Authstore = create((set)=>({
         email:email,
         password:password
       }
+
+      
   
   
       axios.post("http://localhost:4000/auth/signup",sdata)
@@ -55,5 +58,23 @@ export let Authstore = create((set)=>({
         
       })
 
-    }
+    },
+
+    checkAuth: () => {
+  return axios
+    .get("http://localhost:4000/auth/check", { withCredentials: true })
+    .then((res) => {
+      if (res.data.status) {
+        set({ message: { status: true }, user: res.data.user });
+      } else {
+        set({ message: { status: false }, user: null });
+      }
+    })
+    .catch((e) => {
+      console.log("Auth check failed", e);
+      set({ message: { status: false }, user: null });
+    });
+}
+
+
 }))

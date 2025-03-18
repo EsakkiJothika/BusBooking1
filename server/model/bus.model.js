@@ -18,7 +18,47 @@ let bus = new mongoose.Schema({
         type:String
     },
 
-    "utilities" : {
+    "ownername" : {
+        type:String
+    },
+
+    "ownernumber": {
+        type:Number
+    },
+
+    "drivername" : {
+        type:String
+    },
+
+    "drivernumber" : {
+        type:Number
+    },
+
+    "starttime" : {
+        type:String
+    },
+
+    "endtime" : {
+        type:String
+    },
+
+    "snacks" : {
+        type:Boolean
+    },
+
+    "water" : {
+        type:Boolean
+    },
+
+    "blanket" : {
+        type:Boolean
+    },
+
+    "tv" : {
+        type:Boolean
+    },
+
+    "chargeport" : {
         type:Boolean
     },
 

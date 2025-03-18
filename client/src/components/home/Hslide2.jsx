@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 
 const Hslide2 = () => {
   return (
-    <div id='hb1' style={{height:"700px"}}>
+    <div id='hb1' >
 
-      <div style={{backgroundColor:"rgba(0,0,0,0.3)",height:"700px"}}>
+      <div style={{backgroundColor:"rgba(0,0,0,0.3)"}}>
 
         <h1 style={{fontSize:"60px"}} className='text-center pt-4'>About Us</h1><br />
 
-        <div className="row justify-content-evenly mt-4">
+        <div className="row justify-content-evenly p-3 p-sm-5">
           <div className="col-sm-5">
 
           </div>

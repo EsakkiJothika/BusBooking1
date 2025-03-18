@@ -25,6 +25,10 @@ const Signslide = () => {
       const password = formData.get('password');
       signhandler(email, username, password);
     }
+
+    
+
+
   };
 
   return (

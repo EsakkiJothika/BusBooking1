@@ -5,12 +5,21 @@ import l from "../../assets/icons/bus.svg"
 import c from "../../assets/icons/calender.svg"
 import w from "../../assets/icons/walk.svg"
 import r from "../../assets/icons/run.svg"
+
+import e1 from "../../assets/icons/star.png"
+import f from "../../assets/icons/food.svg"
+import w1 from "../../assets/icons/waterbottle.svg"
+import t from "../../assets/icons/tv.svg"
+import c1 from "../../assets/icons/chargeport.svg"
+import b from "../../assets/icons/blanket.svg"
 import { busStore } from '../../statemanager/bus.store'
 
 const Btslide = () => {
 
 
-  let {findbus} = busStore()
+  let {findbus,busInfo} = busStore();
+
+  
 
 
   let [from,setFrom] = useState();
@@ -29,11 +38,14 @@ const Btslide = () => {
 
     }
 
-    console.log(traveldata);
+//    console.log(data);
+   
     
 
     findbus(traveldata)
    
+    
+    
     
     
   }
@@ -86,57 +98,13 @@ const Btslide = () => {
 
 
     
-  
-      {/* <div className="row justify-content-evenly p-5" >
-        <div className="col-sm-5 p-5">
-            <img src={e} alt="" className='img-fluid' />
-        </div>
-        <div className="col-sm-6">
-
-            <h3 className='mt-3 text-center'><i>Book your Tickets through online</i></h3>
-
-            <div className='row justify-content-center mt-5 '>
-
-                
-                <div className="col-sm-8 sbox p-4 ">
-                  
-
-                <h3 className='text-center'>For Booking</h3>
-
-                <hr />
-
-                <form action="" id='fom' className=''>
-
-                    <div className="input-group mb-3">
-                        <span className="input-group-text" ><img src={l} alt="" /></span>
-                        <input type="text" className="form-control" placeholder="From" onChange={(e)=>{setFrom(e.target.value)}} />
-                    </div>
-
-                    <div className="input-group mb-3">
-                        <span className="input-group-text" ><img src={l} alt="" /></span>
-                        <input type="text" className="form-control" placeholder="To" onChange={(e)=>{setTo(e.target.value)}} />
-                    </div>
-
-                    <div className="input-group ">
-                        <span className="input-group-text" ><img src={c} alt="" /></span>
-                        <input type="date" className="form-control" placeholder="Date" onChange={(e)=>{setDate(e.target.value)}}/>
-                    </div>
-                    <div className="row justify-content-center ">
-                      <div className="col-5 ">
-                        <button className='testbuttonbt' onClick={jdata}>Search</button>
-                      </div>
-                    </div>
-
-
-                </form>
-
-                </div>
-                
-            </div>
-            
-        </div>
-      </div> */}
     </div>
+
+    
+
+
+
+    
     </div>
     
   )

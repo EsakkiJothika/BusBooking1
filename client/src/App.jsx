@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import Signuppage from './pages/Signuppage'
@@ -14,7 +14,27 @@ import Contactpage from './pages/Contactpage'
 function App() {
 
 
-  let {message} = Authstore();
+  let { message, checkAuth } = Authstore(); // Make sure checkAuth is available
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+      if (checkAuth) {
+          checkAuth()
+              .then(() => setLoading(false))
+              .catch(() => setLoading(false));
+      } else {
+          console.error("checkAuth function is missing!");
+          setLoading(false);
+      }
+  }, []);
+
+  if (loading) {
+      return <div className='container1 ' >
+        <div className=' loader'></div>
+        </div>
+  }
+
+    
 
 
   return (
