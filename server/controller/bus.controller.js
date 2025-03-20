@@ -48,5 +48,20 @@ module.exports = {
             })
         })
 
+    },
+
+    findsinglebus : async (req,res)=>{
+
+        let {id} = req.params
+
+        await busdetails.findOne({_id:id})
+        .then((d)=>{
+            res.send(d)
+        })
+        .catch((e)=>{
+            console.log(e);
+            
+        })
     }
+
 }

@@ -9,6 +9,7 @@ import Navmobile from './components/Navmobile'
 import Bookticketpage from './pages/Bookticketpage'
 import { Authstore } from './statemanager/auth.store'
 import Contactpage from './pages/Contactpage'
+import Singlebuspage from './pages/Singlebuspage'
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
       <Route path='/signup' element={<Signuppage />}>Signup</Route>
       <Route path='/login' element={message.status ? <Bookticketpage /> : <Loginpage />}>Login</Route>
       <Route path='/bookticket' element={message.status ? <Bookticketpage /> : <Loginpage />}>BookTicket</Route>
+      <Route path='/singlebus/:id' element={<Singlebuspage />}>SingleBus</Route>
 
     </Routes>
     </BrowserRouter>

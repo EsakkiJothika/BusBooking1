@@ -203,7 +203,7 @@ const Addbus = () => {
     </div>
 
             <div className="row justify-content-center">
-              <div className="col-2">
+              <div className="col-sm-2">
                     <button type="submit" className="  w-100 testbutton" onClick={detail}>
                         Submit
                     </button>

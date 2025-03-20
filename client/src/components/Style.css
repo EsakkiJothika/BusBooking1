@@ -30,7 +30,7 @@
 }
 
 .slide{
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.4);
   height: 605px;
   width: 100%;
   display: flex;
@@ -317,9 +317,26 @@
   font-size: larger;
 }
 
+.booktic > div > img {
+
+  height: 50px;
+  cursor: pointer;
+
+}
+
+.bookform > div > label{
+  font-size: large;
+}
+
 
 
 @media all and (max-width:500px){
+
+  
+
+  .Link > button{
+    margin: 5px;   
+}
 
   #S > form > div > div > input{
 
@@ -435,4 +452,11 @@
     height: 100%;
   }
   
+}
+
+
+@media all and (max-width:1200px){
+
+  
+
 }

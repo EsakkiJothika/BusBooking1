@@ -7,6 +7,7 @@ import t from "../../assets/icons/tv.svg"
 import c from "../../assets/icons/chargeport.svg"
 import b from "../../assets/icons/blanket.svg"
 import { busStore } from '../../statemanager/bus.store'
+import { Link } from 'react-router-dom'
 
 const Buslist = () => {
 
@@ -72,7 +73,7 @@ return(
 
                     <div className="row justify-content-end">
                 <div className="col-sm-3 Navb">
-                    <button className='testbutton'>view seats</button>
+                   <Link to={`/singlebus/${d._id}`}><button className='testbutton'>view seats</button></Link> 
                 </div>
                 
             </div>
