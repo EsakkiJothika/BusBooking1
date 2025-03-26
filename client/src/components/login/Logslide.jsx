@@ -30,8 +30,8 @@ const Logslide = () => {
   };
 
   return (
-    <div>
-      <div className="container pt-5" style={{ height: "700px" }}>
+    <div className='lbg'>
+      <div className="container pt-5 "  style={{ height: "650px" }}>
         <div className="row justify-content-evenly">
           <div className="col-6 sbus">
                     <div className="row">
@@ -51,7 +51,7 @@ const Logslide = () => {
             <p className='text-center'>
               <i className={message.status ? "bg-success" : "bg-danger"}>{message.msg}</i>
             </p>
-            <h4 style={{ fontSize: "30px" }}>Login</h4>
+            <h4 style={{ fontSize: "30px",color:'white' }}>Login</h4>
             <hr />
             <div id='L'>
               <form noValidate className={validated ? "was-validated" : "needs-validation"} onSubmit={logform}>
@@ -89,8 +89,8 @@ const Logslide = () => {
               </form>
             </div>
             <div>
-              <p style={{ textAlign: "center", fontSize: "20px", marginTop: "10px" }}>
-                Don't have an account? <Link to={'/signup'} style={{ textDecoration: "none", color: '#BF2EF0', fontWeight: "bolder",fontSize: '20px' }}>Signup</Link>
+              <p style={{ textAlign: "center", fontSize: "20px", marginTop: "10px", fontWeight:"bold" }}>
+                Don't have an account? <Link to={'/signup'} style={{ textDecoration: "none", color: 'white', fontWeight: "bolder",fontSize: '23px' }}>Signup</Link>
               </p>
             </div>
           </div>

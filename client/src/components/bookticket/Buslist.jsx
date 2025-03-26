@@ -6,6 +6,7 @@ import w from "../../assets/icons/waterbottle.svg"
 import t from "../../assets/icons/tv.svg"
 import c from "../../assets/icons/chargeport.svg"
 import b from "../../assets/icons/blanket.svg"
+import ac from "../../assets/icons/ac.svg"
 import { busStore } from '../../statemanager/bus.store'
 import { Link } from 'react-router-dom'
 
@@ -14,9 +15,10 @@ const Buslist = () => {
     let {findbus,busInfo} = busStore();
 
     let data = busInfo?.busdata || [];
+  
 
 
-// console.log(data);
+console.log(data);
 
 
   return (
@@ -43,6 +45,7 @@ return(
                     {d.tv && (<img src={t} alt="sampleimage" className='img-fluid' style={{border:"1px solid gray", borderRadius:"50px",padding:"10px", marginRight:"5px"}}/>)}
                     {d.chargeport && (<img src={c} alt="sampleimage" className='img-fluid' style={{border:"1px solid gray", borderRadius:"50px",padding:"10px", marginRight:"5px"}}/>)}
                     {d.blanket && (<img src={b} alt="sampleimage" className='img-fluid' style={{border:"1px solid gray", borderRadius:"50px",padding:"10px", marginRight:"5px"}}/>)}
+                    {d.blanket && (<img src={ac} alt="sampleimage" className='img-fluid' style={{border:"1px solid gray", borderRadius:"50px",padding:"10px", marginRight:"5px"}}/>)}
                     
                 </div>
                 <div className="col-sm-8 ">
@@ -64,10 +67,10 @@ return(
                             <p>Ticket Price: {d.price}</p>
 
                         </div>
-                        <div className="col-sm-3 ps-3 ">
-                            <p>Seats Available: {d.seats}</p>
+                        {/* <div className="col-sm-3 ps-3 ">
+                            <p>Seats Available: {d.availableseats}</p>
                 
-                        </div>
+                        </div> */}
                         
                     </div>
 

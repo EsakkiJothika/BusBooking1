@@ -9,11 +9,11 @@ const Hslide2 = () => {
 
         <h1 style={{fontSize:"60px"}} className='text-center pt-4'>About Us</h1><br />
 
-        <div className="row justify-content-evenly p-3 p-sm-5">
-          <div className="col-sm-5">
+        <div className="row justify-content-evenly p-3 p-sm-4 pt-sm-2 ">
+          <div className="col-lg-5 col-md-0">
 
           </div>
-          <div className="col-sm-5 card1">
+          <div className="col-lg-5 col-md-10 card1">
 
           <p style={{lineHeight:"180%",textAlign:"justify",color:"black",padding:"10px 20px",fontSize:"17px",fontWeight:"500"}}>Welcome to <b style={{color:"#BF2EF0"}}><i>BusBuddy</i> </b> Your Ultimate Bus Travel Partner! ultimate solution for seamless and hassle-free bus travel reservations. We are dedicated to revolutionizing the way you book bus tickets, making it easier, faster, and more convenient than ever before.<br />At <i >BusBuddy</i>, we are a team of passionate travel enthusiasts and technology experts committed to enhancing your travel experience. Our goal is to connect travelers with a vast network of bus operators, ensuring safe, reliable, and affordable travel options across cities and regions. Whether you are planning a short trip or a long journey, we provide you with the best choices tailored to your needs.</p>
 

@@ -6,7 +6,7 @@ const Navmobile = () => {
     <div style={{backgroundColor:"black"}}>
     <nav className="navbar navbar-expand-lg " >
   <div className="container-fluid">
-    <a className="navbar-brand" href="#" style={{color:'white',fontWeight:"500",fontSize:"30px"}}>Js Travels</a>
+    <a className="navbar-brand" href="#" style={{color:'white',fontWeight:"500",fontSize:"30px"}}>BusBuddy</a>
     <button className="navbar-toggler  text-bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon" />
     </button>

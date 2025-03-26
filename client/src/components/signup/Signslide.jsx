@@ -32,7 +32,9 @@ const Signslide = () => {
   };
 
   return (
-    <div className="container pt-5" style={{ height: '700px' }}>
+    <div className='lbg'>
+
+<div className="container pt-5 " style={{ height: '700px' }}>
       <div className="row justify-content-evenly">
         <div className="col-6 sbus">
           <div className="row">
@@ -52,7 +54,7 @@ const Signslide = () => {
           <p className="text-center">
             <i className={message.status ? 'bg-success' : 'bg-danger'}>{message.msg}</i>
           </p>
-          <h2 className="mb-3">Signup</h2>
+          <h2 className="mb-3 text-light">Signup</h2>
           <hr />
 
           <div id='S'>
@@ -128,22 +130,25 @@ const Signslide = () => {
           </div>
           
 
-          <p className="text-center mt-4">
+          <p className="text-center mt-4" style={{color:'white'}}>
             By pressing “submit” you agree to our{' '}
-            <a href="#" className="" style={{color:"purple",textDecoration:"none"}}>
+            <a href="#" className="" style={{color:"wheat",textDecoration:"none"}}>
               terms & conditions
             </a>
           </p>
 
-          <p className="text-center" style={{ fontSize: '20px' }}>
+          <p className="text-center" style={{ fontSize: '20px', fontWeight:"bold" }}>
             Already have an account?{' '}
-            <Link style={{color:"#BF2EF0",textDecoration:"none",fontSize: '20px'}} to="/login" className="fw-bold ">
+            <Link style={{color:"white",textDecoration:"none",fontSize: '23px'}} to="/login" className="fw-bold ">
               Login
             </Link>
           </p>
         </div>
       </div>
     </div>
+
+    </div>
+   
   );
 };
 

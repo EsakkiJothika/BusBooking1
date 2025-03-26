@@ -1,12 +1,27 @@
+const bookingDetail = require("../model/bookingmodel");
 const busdetails = require("../model/bus.model")
 
 module.exports = {
 
     addbus : async(req,res)=>{
 
-        let {from,to,date,travelsname,ownername,ownernumber,drivername,drivernumber,starttime,endtime,snacks,water,tv,blanket,chargeport,bustype,seats,windowseats,price,rating} = req.body
+        let {from,to,date,travelsname,ownername,ownernumber,drivername,drivernumber,starttime,endtime,startingdate,reachingdate,snacks,water,tv,blanket,chargeport,ac,bustype,seats,price,rating} = req.body
 
-        busdetails.create({from:from,to:to,date:date,travelsname:travelsname,ownername:ownername,ownernumber:ownernumber,drivername:drivername,drivernumber:drivernumber,starttime:starttime,endtime:endtime,snacks:snacks,water:water,tv:tv,blanket:blanket,chargeport:chargeport,bustype:bustype,seats:seats,windowseats:windowseats,price:price,rating:rating})
+        let totalseat = [];
+        
+
+        for (let i = 1; i <= Number(seats); i++) {
+          
+            let obj = {
+                seatNo : i,
+                status: true
+            }
+
+            totalseat.push(obj)
+           
+        } 
+
+        busdetails.create({from:from,to:to,date:date,travelsname:travelsname,ownername:ownername,ownernumber:ownernumber,drivername:drivername,drivernumber:drivernumber,starttime:starttime,endtime:endtime,startingdate:startingdate,reachingdate:reachingdate,snacks:snacks,water:water,tv:tv,blanket:blanket,chargeport:chargeport,ac:ac,bustype:bustype,price:price,rating:rating, seats:totalseat, })
 
         .then((d)=>{
             res.json({
@@ -61,6 +76,22 @@ module.exports = {
         .catch((e)=>{
             console.log(e);
             
+        })
+    },
+
+    bookbus : (req,res)=>{
+
+        let {passengerName,email,mobileNumber,alternatemobile,selectedseats} = req.body;
+
+        bookingDetail.create({passengerName:passengerName,email:email,mobileNumber:mobileNumber,alternatemobile:alternatemobile,selectedseats:selectedseats})
+        .then(()=>{
+            
+            res.send("bokking confirmed");
+            
+        })
+        .catch(()=>{
+           
+            res.send("OOPS! Error")
         })
     }
 

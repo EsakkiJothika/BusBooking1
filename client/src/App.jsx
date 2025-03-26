@@ -10,6 +10,7 @@ import Bookticketpage from './pages/Bookticketpage'
 import { Authstore } from './statemanager/auth.store'
 import Contactpage from './pages/Contactpage'
 import Singlebuspage from './pages/Singlebuspage'
+import Footer from './components/footer/Footer'
 
 
 function App() {
@@ -55,13 +56,16 @@ function App() {
     <Routes >
 
       <Route path='/' element={<Homepage />}>Home</Route>
-      <Route path='/contact' element={<Contactpage />}>Contact</Route>
+      <Route path='/addbus' element={<Contactpage />}>Addbus</Route>
       <Route path='/signup' element={<Signuppage />}>Signup</Route>
       <Route path='/login' element={message.status ? <Bookticketpage /> : <Loginpage />}>Login</Route>
       <Route path='/bookticket' element={message.status ? <Bookticketpage /> : <Loginpage />}>BookTicket</Route>
       <Route path='/singlebus/:id' element={<Singlebuspage />}>SingleBus</Route>
 
     </Routes>
+
+    <Footer />
+    
     </BrowserRouter>
       
     </>

@@ -14,6 +14,14 @@ let bus = new mongoose.Schema({
         type:String
     },
 
+    "startingdate" : {
+        type:String
+    },
+
+    "reachingdate" : {
+        type:String
+    },
+
     "travelsname" : {
         type:String
     },
@@ -61,17 +69,13 @@ let bus = new mongoose.Schema({
     "chargeport" : {
         type:Boolean
     },
+    
+    "ac" : {
+        type:Boolean
+    },
 
     "bustype" : {
         type:String
-    },
-
-    "seats" : {
-        type:Number
-    },
-
-    "windowseats" : {
-        type:Number
     },
 
     "price" : {
@@ -80,6 +84,10 @@ let bus = new mongoose.Schema({
 
     "rating" : {
         type:Number 
+    },
+
+    "seats":{
+        type:[]
     }
 })
 
