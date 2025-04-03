@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Style.css';
 import "../Animation.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import e from '../../assets/icons/mail.svg';
 import m from '../../assets/icons/user.svg';
 import f from '../../assets/icons/eyec.svg';
@@ -13,23 +13,31 @@ import { Authstore } from '../../statemanager/auth.store';
 const Signslide = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { signhandler, message } = Authstore();
+  const navigate = useNavigate();
 
-  const formdata = (e) => {
+  const formdata = async (e) => {
     e.preventDefault();
     e.target.classList.add('was-validated');
-
+  
     if (e.target.checkValidity()) {
       const formData = new FormData(e.target);
       const email = formData.get('email');
       const username = formData.get('username');
       const password = formData.get('password');
-      signhandler(email, username, password);
+  
+      try {
+        await signhandler(email, username, password);
+        
+        // Ensure user is redirected to login page after signup
+        navigate('/login');
+        
+      } catch (error) {
+        console.error("Signup failed", error);
+      }
     }
-
-    
-
-
   };
+  
+  
 
   return (
     <div className='lbg'>
@@ -52,7 +60,7 @@ const Signslide = () => {
         </div>
         <div className="col-sm-5 col-md-6 col-lg-4 p-4 mt-4 card2">
           <p className="text-center">
-            <i className={message.status ? 'bg-success' : 'bg-danger'}>{message.msg}</i>
+          <i className='text-black' style={{fontWeight:'500',fontSize:'large', backgroundColor:"#BF2EF0"}}>{message.msg}</i>
           </p>
           <h2 className="mb-3 text-light">Signup</h2>
           <hr />

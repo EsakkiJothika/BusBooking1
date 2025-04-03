@@ -38,8 +38,9 @@ import axios from "axios";
             console.log(res.data);
             
         })
-        .catch(()=>{
-            alert("Error")
+        .catch((e)=>{
+            alert("Error",e)
+              
         })
 
     },
@@ -57,19 +58,7 @@ import axios from "axios";
 
     },
 
-    bookbus : (data,id)=>{
-
-        axios.post(`http://localhost:4000/bus/singlebus/${id}/bookbus`,data)
-        .then((res)=>{
-            console.log(res.data);
-            
-        })
-        .catch((e)=>{
-            console.log(e);
-            
-        })
-    }
-
+    
 
 
 

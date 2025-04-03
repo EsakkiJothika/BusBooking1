@@ -1,7 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Authstore } from '../statemanager/auth.store';
 
 const Navmobile = () => {
+
+  let { message, checkAuth, logoutHandler } = Authstore(); // Make sure checkAuth is available
+
+  useEffect(() => {
+    checkAuth();
+  }, []);
+
+  let logOut = () => {
+    logoutHandler();
+  };
+
   return (
     <div style={{backgroundColor:"black"}}>
     <nav className="navbar navbar-expand-lg " >
@@ -19,10 +32,17 @@ const Navmobile = () => {
         <Link className='Link' to={'/bookticket'}><button className='lb'>Book Ticket</button></Link>
         </li>
         <li className="nav-item">
-        <Link className='Link' to={'/contact'}><button className='lb'>Addbus</button></Link>
+        <Link className='Link' to={'/about'}><button className='lb'>About Us</button></Link>
         </li>
+        {/* <li className="nav-item">
+        <Link className='Link' to={'/contact'}><button className='lb'>Addbus</button></Link>
+        </li> */}
         <li className="nav-item">
-        <Link className='Link' to={'/signup'}><button className='lb'>Login</button></Link>
+        <Link className="Link" to={message.status ? "#" : "/login"}>
+              <button className="lb" onClick={() => message.status && logOut()}>
+                {message.status ? "LogOut" : "Login"}
+              </button>
+            </Link>
         </li>
       </ul>
       {/* <form className="d-flex" role="search">

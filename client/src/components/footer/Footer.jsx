@@ -11,10 +11,8 @@ const Footer = () => {
           <div className="col-md-3 ">
             <h5>Company</h5>
             <ul className="list-unstyled">
-              <li><Link to="/about" className="footer-link">About Us</Link></li>
-              <li><Link to="/contact" className="footer-link">Contact</Link></li>
-              <li><Link to="/careers" className="footer-link">Careers</Link></li>
-              <li><Link to="/blog" className="footer-link">Blog</Link></li>
+              <li><Link to="/about" className="footer-link">About Us</Link></li>              
+              <li><Link to="/terms" className="footer-link">Privacy Policy</Link></li>
             </ul>
           </div>
           <div className="col-md-3 ">
@@ -22,17 +20,14 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li><Link to="/faq" className="footer-link">FAQs</Link></li>
               <li><Link to="/terms" className="footer-link">Terms & Conditions</Link></li>
-              <li><Link to="/privacy" className="footer-link">Privacy Policy</Link></li>
-              <li><Link to="/refund" className="footer-link">Refund Policy</Link></li>
+              
             </ul>
           </div>
           <div className="col-md-3 ">
             <h5 >Support</h5>
             <ul className="list-unstyled">
-                <li><Link to="/support" className="footer-link">Help Center</Link></li>
-                <li><Link to="/booking" className="footer-link">Manage Booking</Link></li>
-                <li><Link to="/cancellation" className="footer-link">Cancellation</Link></li>
-                <li><Link to="/offers" className="footer-link">Offers & Discounts</Link></li>
+                <li><Link to="/support" className="footer-link">Contact</Link></li>
+               
             </ul>
           </div>
           <div className="col-md-3 ">

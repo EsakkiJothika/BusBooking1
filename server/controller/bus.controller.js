@@ -1,3 +1,4 @@
+const Ticket = require("../lib/Ticket");
 const bookingDetail = require("../model/bookingmodel");
 const busdetails = require("../model/bus.model")
 
@@ -30,7 +31,9 @@ module.exports = {
                 data:d
             })
         })
-        .catch((e)=>{
+        .catch((e)=>{ 
+            console.log(e);
+                 
             res.json({
                 status:false,
                 "msg":e,
@@ -79,20 +82,98 @@ module.exports = {
         })
     },
 
-    bookbus : (req,res)=>{
+    // bookbus : async (req,res)=>{
 
-        let {passengerName,email,mobileNumber,alternatemobile,selectedseats} = req.body;
+    //     let {id} = req.params;
+        
 
-        bookingDetail.create({passengerName:passengerName,email:email,mobileNumber:mobileNumber,alternatemobile:alternatemobile,selectedseats:selectedseats})
-        .then(()=>{
+    //     let {passengerName,email,mobileNumber,alternatemobile,selectedseats} = req.body;
+    //     console.log(req.body);
+        
+
+    //     let data = await busdetails.find({_id:id});
+
+
+    //     for (let i = 0; i < data.length; i++) {
             
-            res.send("bokking confirmed");
+
+    //         for(let j=0; j < selectedseats.length-1; j++){
             
-        })
-        .catch(()=>{
+    //             if(selectedseats[j] == data[i].seats.seatNo){
+
+    //                 // busdetails.findOneAndUpdate({seats:data})
+
+    //                 data.seats.status = false;
+
+
+
+    //             }
+    //              console.log(data[i].seats);
+                
+    //         }
+    
+
+          
+                        
+            
+    //     }
+
+
+       
+        
+
+        
+    //     // bookingDetail.create({passengerName:passengerName,email:email,mobileNumber:mobileNumber,alternatemobile:alternatemobile,selectedseats:selectedseats})
+    //     // .then(()=>{
+            
+    //     //     res.send("bokking confirmed");
+            
+    //     // })
+    //     // .catch(()=>{
            
-            res.send("OOPS! Error")
-        })
+    //     //     res.send("OOPS! Error")
+    //     // })
+    // }
+
+
+
+    bookbus: async (req, res) => {
+        try {
+            let { id } = req.params; // Bus ID
+            let { passengerName, email, mobileNumber, alternatemobile, selectedseats } = req.body;
+    
+            let bus = await busdetails.findOne({ _id: id });
+    
+            if (!bus) {
+                return res.status(404).json({ status: false, msg: "Bus not found" });
+            }
+    
+            // Update seat statuses directly in the database
+            await busdetails.updateOne(
+                { _id: id, "seats.seatNo": { $in: selectedseats } }, // Match bus ID and selected seats
+                { $set: { "seats.$[elem].status": false } }, // Update seat status to false
+                { arrayFilters: [{ "elem.seatNo": { $in: selectedseats } }] } // Filter only selected seats
+            );
+    
+            // Store booking details
+           let newTicket =  await bookingDetail.create({
+                passengerName,
+                email,
+                mobileNumber,
+                alternatemobile,
+                selectedseats,
+                date : new Date()
+            })
+            
+            await Ticket(newTicket,bus)
+    
+           return res.status(201).json({ status: true, msg: "Booking Confirmed", ticket:newTicket });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ status: false, msg: "Error occurred while booking seats" });
+        }
     }
+    
+    
 
 }

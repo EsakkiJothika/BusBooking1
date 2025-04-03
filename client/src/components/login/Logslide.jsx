@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../Style.css";
 import "../Animation.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Authstore } from '../../statemanager/auth.store';
 import f from "../../assets/icons/eyec.svg";
 import g from "../../assets/icons/eyeo.svg";
@@ -13,17 +13,21 @@ const Logslide = () => {
   const [password, setPassword] = useState('');
   const [showpassword, setShowpassword] = useState(false);
   const [validated, setValidated] = useState(false);
+  const navigate = useNavigate();
   
   const { loginhandler, message } = Authstore();
   
-  const logform = (event) => {
+  const logform = async (event) => {
     event.preventDefault();
-    
     const form = event.currentTarget;
+
     if (form.checkValidity() === false) {
       event.stopPropagation();
     } else {
-      loginhandler(email, password);
+
+      await loginhandler(email, password);
+      navigate('/bookticket');
+
     }
     
     setValidated(true);
@@ -49,7 +53,7 @@ const Logslide = () => {
                   </div>
           <div className="col-sm-5 col-md-6 col-lg-4 p-4 mt-4 card2">
             <p className='text-center'>
-              <i className={message.status ? "bg-success" : "bg-danger"}>{message.msg}</i>
+              <i className='text-black' style={{fontWeight:'500',fontSize:'large', backgroundColor:"#BF2EF0"}}>{message.msg}</i>
             </p>
             <h4 style={{ fontSize: "30px",color:'white' }}>Login</h4>
             <hr />
@@ -82,7 +86,7 @@ const Logslide = () => {
                 </div>
 
                 <div className="row justify-content-center">
-                  <div className="col-5">
+                  <div className="col-4 col-sm-5">
                     <button className='testbutton1' type="submit">Login</button>
                   </div>
                 </div>

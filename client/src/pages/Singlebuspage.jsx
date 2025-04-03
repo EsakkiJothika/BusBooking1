@@ -1,14 +1,13 @@
-import  { React,useEffect } from 'react'
+import  { React } from 'react'
 import Singlebusinfo from '../components/bookticket/Singlebusinfo'
-import { busStore } from '../statemanager/bus.store'
-import { useParams } from 'react-router-dom'
+
 
 
 const Singlebuspage = () => {
 
 
   return (
-    <div>
+    <div className='pb-4'>
       <Singlebusinfo />
     </div>
   )

@@ -12,7 +12,7 @@ const Addbus = () => {
   let [from, setFrom] = useState();
   let [to, setTo] = useState();
   let [date, setDate] = useState();
-  let [rdate,setRdate] = useState();
+  let [rdate, setRdate] = useState();
   let [stime, setStime] = useState();
   let [etime, setEtime] = useState();
   let [btype, setBtype] = useState();
@@ -31,6 +31,11 @@ const Addbus = () => {
   let detail = (e) => {
     e.preventDefault();
 
+    if (!tname || !ownername || !Ownnum || !dname || !dnum || !from || !to || !date || !rdate || !stime || !etime || !btype || !tprice || !seats || !rate) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
     let busdata = {
       travelsname: tname,
       ownername: ownername,
@@ -42,8 +47,8 @@ const Addbus = () => {
       date: date,
       starttime: stime,
       endtime: etime,
-      startingdate:date,
-      reachingdate:rdate,
+      startingdate: date,
+      reachingdate: rdate,
       bustype: btype,
       price: tprice,
       seats: seats,
@@ -53,12 +58,12 @@ const Addbus = () => {
       tv: tv,
       blanket: blanket,
       chargeport: chargeport,
-      ac : ac
-
+      ac: ac,
     };
 
     addbus(busdata);
 
+ 
     setTname("");
     setOwnername("");
     setOwnnum("");
@@ -80,32 +85,33 @@ const Addbus = () => {
     setBlanket(false);
     setChargeport(false);
     setAc(false);
- 
-    
-  };
 
+  };
+ 
   return (
-    <div className="Ainp">
+    <div className="Ainp pb-5">
       <form action="">
-        <div className="container  p-sm-5">
+        <div className="container pt-3  p-sm-5">
           <h1 style={{ textAlign: "center" }}>
             <i>Adding Bus Form</i>{" "}
           </h1>
 
           <div className="row justify-content-evenly  ">
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Travels Name</label>
               <input
                 type="text"
                 className="form-control"
                 placeholder="Travels name"
+                required
                 onChange={(e) => {
                   setTname(e.target.value);
                 }}
                 value={tname}
               />
             </div>
-            <div className="col-sm-4">
+
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Owner Name</label>
               <input
                 type="text"
@@ -117,7 +123,7 @@ const Addbus = () => {
                 value={ownername}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Owner Mobile Number</label>
               <input
                 type="number"
@@ -129,7 +135,7 @@ const Addbus = () => {
                 value={Ownnum}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Driver Name</label>
               <input
                 type="text"
@@ -141,7 +147,7 @@ const Addbus = () => {
                 value={dname}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Driver Mobile Number</label>
               <input
                 type="number"
@@ -153,7 +159,7 @@ const Addbus = () => {
                 value={dnum}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">From</label>
               <input
                 type="text"
@@ -165,7 +171,7 @@ const Addbus = () => {
                 value={from}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">To</label>
               <input
                 type="text"
@@ -177,7 +183,7 @@ const Addbus = () => {
                 value={to}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Date</label>
               <input
                 type="date"
@@ -189,7 +195,7 @@ const Addbus = () => {
                 value={date}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Start Time</label>
               <input
                 type="time"
@@ -201,7 +207,7 @@ const Addbus = () => {
                 value={stime}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">End Time</label>
               <input
                 type="time"
@@ -213,7 +219,7 @@ const Addbus = () => {
                 value={etime}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Starting Date</label>
               <input
                 type="date"
@@ -225,7 +231,7 @@ const Addbus = () => {
                 value={date}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Reaching Date</label>
               <input
                 type="date"
@@ -237,7 +243,7 @@ const Addbus = () => {
                 value={rdate}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="busType">Bus Type</label>
               <select
                 className="form-control"
@@ -250,7 +256,7 @@ const Addbus = () => {
               </select>
             </div>
 
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Ticket Price</label>
               <input
                 type="number"
@@ -262,7 +268,7 @@ const Addbus = () => {
                 value={tprice}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Number of Seats</label>
               <input
                 type="number"
@@ -275,7 +281,7 @@ const Addbus = () => {
               />
             </div>
 
-            <div className="col-sm-4">
+            <div className="col-md-5 col-lg-4">
               <label htmlFor="">Ratings</label>
               <input
                 type="number"
@@ -290,19 +296,25 @@ const Addbus = () => {
 
             <div className="row justify-content-center">
               <div
-                className="card mb-3 p-4 "
-                style={{ backgroundColor: "transparent",border:'0.5px solid purple' }}
+                className="card mb-3 p-lg-4 p-2 "
+                style={{
+                  backgroundColor: "transparent",
+                  border: "0.5px solid purple",
+                }}
               >
                 <div className="row g-0 justify-content-evenly">
                   <div className="col-md-4 align-self-center">
-                    <p style={{fontSize:'larger'}}>What all are the utilities you provide?</p>
+                    <p style={{ fontSize: "larger" }}>
+                      What all are the utilities you provide?
+                    </p>
                   </div>
                   <div className="col-md-7">
                     <div className="card-body ">
                       <div className="row ">
-                        <div className="col-sm-3">
+                        <div className="col-md-4 col-lg-3">
                           <div className="form-check">
-                            <input style={{border:'1px solid purple' }}                         
+                            <input
+                              style={{ border: "1px solid purple" }}
                               className="form-check-input"
                               type="checkbox"
                               defaultValue
@@ -320,9 +332,10 @@ const Addbus = () => {
                             </label>
                           </div>
                         </div>
-                        <div className="col-sm-3">
+                        <div className="col-md-4 col-lg-3">
                           <div className="form-check">
-                            <input style={{border:'1px solid purple' }} 
+                            <input
+                              style={{ border: "1px solid purple" }}
                               className="form-check-input"
                               type="checkbox"
                               defaultValue
@@ -336,13 +349,14 @@ const Addbus = () => {
                               className="form-check-label"
                               htmlFor="flexCheckDefault"
                             >
-                              Waterbottle
+                              Water
                             </label>
                           </div>
                         </div>
-                        <div className="col-sm-3">
+                        <div className="col-md-4 col-lg-3">
                           <div className="form-check">
-                            <input style={{border:'1px solid purple' }} 
+                            <input
+                              style={{ border: "1px solid purple" }}
                               className="form-check-input"
                               type="checkbox"
                               defaultValue
@@ -360,9 +374,10 @@ const Addbus = () => {
                             </label>
                           </div>
                         </div>
-                        <div className="col-sm-3">
+                        <div className="col-md-4 col-lg-3">
                           <div className="form-check">
-                            <input style={{border:'1px solid purple' }} 
+                            <input
+                              style={{ border: "1px solid purple" }}
                               className="form-check-input"
                               type="checkbox"
                               defaultValue
@@ -381,51 +396,50 @@ const Addbus = () => {
                           </div>
                         </div>
 
-                        <div className="col-sm-3">
-                        <div className="form-check">
-                        <input style={{border:'1px solid purple' }} 
-                          className="form-check-input"
-                          type="checkbox"
-                          defaultValue
-                          id="flexCheckDefault"
-                          onChange={(e) => {
-                            setChargeport(e.target.checked);
-                          }}
-                          checked={chargeport}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="flexCheckDefault"
-                        >
-                          Charging Port
-                        </label>
-                      </div>
+                        <div className="col-md-4 col-lg-3">
+                          <div className="form-check">
+                            <input
+                              style={{ border: "1px solid purple" }}
+                              className="form-check-input"
+                              type="checkbox"
+                              defaultValue
+                              id="flexCheckDefault"
+                              onChange={(e) => {
+                                setChargeport(e.target.checked);
+                              }}
+                              checked={chargeport}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexCheckDefault"
+                            >
+                              Charging Port
+                            </label>
+                          </div>
                         </div>
 
-                        <div className="col-sm-3">
-                        <div className="form-check">
-                        <input style={{border:'1px solid purple'}} 
-                          className="form-check-input"
-                          type="checkbox"
-                          defaultValue
-                          id="flexCheckDefault"
-                          onChange={(e) => {
-                            setAc(e.target.checked);
-                          }}
-                          checked={ac}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="flexCheckDefault"
-                        >
-                          AC
-                        </label>
-                      </div>
+                        <div className="col-md-4 col-lg-3">
+                          <div className="form-check">
+                            <input
+                              style={{ border: "1px solid purple" }}
+                              className="form-check-input"
+                              type="checkbox"
+                              defaultValue
+                              id="flexCheckDefault"
+                              onChange={(e) => {
+                                setAc(e.target.checked);
+                              }}
+                              checked={ac}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="flexCheckDefault"
+                            >
+                              AC
+                            </label>
+                          </div>
                         </div>
-
                       </div>
-
-                      
                     </div>
                   </div>
                 </div>
@@ -514,17 +528,18 @@ const Addbus = () => {
                 </label>
               </div>
             </div> */}
-          </div>
 
-          <div className="row justify-content-center">
-            <div className="col-sm-2">
-              <button
-                type="submit"
-                className="  w-100 testbutton"
-                onClick={detail}
-              >
-                Submit
-              </button>
+            <div className="row justify-content-center">
+              <div className="col-md-3 col-lg-2">
+                <button
+                  style={{ marginLeft: "0" }}
+                  type="submit"
+                  className="  w-100 testbutton"
+                  onClick={detail}
+                >
+                  Submit
+                </button>
+              </div>
             </div>
           </div>
         </div>

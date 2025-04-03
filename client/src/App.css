@@ -1,5 +1,4 @@
 
-  
 
 #Dnav{
 
@@ -12,6 +11,33 @@
 #Navm{
 
   display: none;
+}
+
+.abt{
+  line-height: 190%;
+  text-align: justify;
+}
+
+.abt > h3{
+  color: #BF2EF0;
+}
+
+.abt > p {
+  padding-left: 20px;
+  font-size: 17px;
+}
+
+.abt > ul > li {
+  padding-left: 20px;
+  font-size: 17px;
+}
+
+.abtf > h4{
+  color: #BF2EF0;
+}
+
+.abtf{
+  line-height: 200%;
 }
 
 .container1{
@@ -58,4 +84,19 @@
 
     display: block;
   }
+
+ 
+}
+
+@media all and (max-width:500px){
+  .abt > p {
+    padding-left: 0px;
+  }
+  
+  .abt > ul > li {
+    padding-left: 0px;
+  }
+
+
+    
 }

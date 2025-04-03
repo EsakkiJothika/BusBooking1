@@ -14,8 +14,12 @@ const Hslide = () => {
 
       <div className='slidecon tracking-in-contract-bck'>
         <h1><i>Welcome to BusBuddy</i></h1>
-
+        <h4><i>Wish you a Happy and Safe Journey! </i></h4>
       </div>
+
+      {/* <div className='slidecon focus-in-expand-fwd'>
+        <h4><i>Wish you a Happy and Safe Journey! </i></h4>
+      </div> */}
       
      
     </div>

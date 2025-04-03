@@ -30,7 +30,7 @@ module.exports = {
             .then(()=>{
                 return res.json({
                     status:true,
-                    "msg":"Account Created"
+                    "msg":"Account Created Please LogIn to continue"
                 })
             })
             .catch(()=>{
