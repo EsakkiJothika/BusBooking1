@@ -49,10 +49,11 @@ function App() {
 
     <BrowserRouter>
 
-
+    <div className="app-container">
   <div id='Dnav'>
 <Navbar />
 </div>
+
 
 
 
@@ -60,7 +61,7 @@ function App() {
   <Navmobile />
 </div>
     
-
+<div className="content">
     <Routes >
 
       <Route path='/' element={<Homepage />}>Home</Route>
@@ -76,7 +77,11 @@ function App() {
 
     </Routes>
 
+    </div>
+
     <Footer />
+
+    </div>
     
     </BrowserRouter>
       

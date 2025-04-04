@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
+import { apiendpoint } from "../Data";
 
 
 
@@ -12,7 +13,7 @@ import axios from "axios";
 
     findbus: (data)=>{
 
-        axios.post("http://localhost:4000/bus/findbus",data,{withCredentials:true})
+        axios.post(`${apiendpoint}/bus/findbus`,data,{withCredentials:true})
         .then((res)=>{
             
             set(({busInfo:res.data}));
@@ -32,9 +33,9 @@ import axios from "axios";
 
     addbus : (datas)=>{
 
-        axios.post("http://localhost:4000/bus/addbus",datas)
+        axios.post(`${apiendpoint}/bus/addbus`,datas)
         .then((res)=>{
-            
+            alert("bus data added")
             console.log(res.data);
             
         })
@@ -47,7 +48,7 @@ import axios from "axios";
 
     singlebus : (id)=>{
 
-        axios.get(`http://localhost:4000/bus/singlebus/${id}`)
+        axios.get(`${apiendpoint}/bus/singlebus/${id}`)
         .then((res)=>{
             set({bus:res.data})
         })
@@ -59,10 +60,6 @@ import axios from "axios";
     },
 
     
-
-
-
-
 
 
 

@@ -2,7 +2,7 @@ import React from 'react'
 import GooglePayButton from '@google-pay/button-react';
 
 const Payment = () => {
-  return (
+  return ( 
     <GooglePayButton
   environment="TEST"
   paymentRequest={{

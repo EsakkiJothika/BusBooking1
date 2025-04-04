@@ -3,7 +3,7 @@ import "../App.css"
 
 const Faqpage = () => {
   return (
-    <div>
+    <div >
       <div className="container abtf p-3 p-sm-4">
         <h2 style={{textAlign:"center",marginBottom:'15px', color:'#BF2EF0'}}>FAQs - BusBuddy </h2>
 
@@ -23,9 +23,7 @@ const Faqpage = () => {
         </h4>
 
         <p>
-          Yes, you can cancel or reschedule your booking by visiting the My
-          Bookings section. Please note that cancellation and rescheduling
-          policies may vary depending on the bus operator.
+          No, once you booked the ticket cancellation is not available.
         </p>
 
         <h4>

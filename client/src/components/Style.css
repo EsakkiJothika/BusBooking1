@@ -22,6 +22,8 @@
   float: right;
 }
 
+
+
 #A{
 
   background-color: black;
@@ -133,7 +135,7 @@
     
     padding: 5px 25px;
     margin-top: 15px;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     border-radius: 10px;
     border: 2px solid #BF2EF0;
     background: #BF2EF0;
@@ -334,11 +336,9 @@
   /* box-shadow: inset 30px 5px 4px 1px rgba(0, 0, 0, 1); */
 }
 
-.sigpag > img {
-  position: absolute;
-  top: 400px;
-  left: 50px;
-}
+/* .sigpag > img {
+  height: 250px;
+} */
 
 .sbus{
   display: block;
@@ -360,6 +360,7 @@
   margin-top: 8px;
   border: 1px solid purple;
   height: 45px;
+  
 }
 
 .Ainp > form > div > div > div > select {
@@ -386,7 +387,7 @@
 
 .seaters {
 
-  height: 120px;
+  height: 110px;
   width: 100%;
 
 }
@@ -394,6 +395,10 @@
 
 .bookform > div > label{
   font-size: large;
+}
+
+.bookform > div > input{
+  height: 40px;
 }
 
 .footersec > div {
@@ -484,6 +489,11 @@
     color: white;
     margin-bottom: 50px;
   }
+
+  .bookform > div > input{
+    height: 45px;
+  }
+  
 }
 
 
@@ -516,6 +526,11 @@
     bottom: 330px;
     left: 0px;
     
+}
+
+.Ainp > form > div > div > div > input {
+ 
+  height: 50px;
 }
 
   #deskslide{
@@ -571,12 +586,12 @@
 
   .testbuttonbt {
   
-    padding: 10px 25px;
+    /* padding: 10px 25px; */
     /* margin-top: 20px; */
-    margin-left: 5px;
+    /* margin-left: 10px; */
     font-size: 25px;
     height: 50px;
-   
+    width: 100%;
   }
 
   #fom > div > div > input{
@@ -632,17 +647,6 @@
 
   
 
- 
-
-  .testbuttonbt {
-    padding: 5px 25px;
-    margin-top: 15px;
-    margin-left: -10px;
-    border-radius: 10px;
-    border: 2px solid #BF2EF0;
-    background: #BF2EF0;
-  }
-
   .sbus{
     display: none;
   }
@@ -680,6 +684,21 @@
 
   .Link > button{
     margin: 5px;   
+}
+
+.lbg{
+  
+  height:950px;
+ 
+}
+
+#L > form > div > input{
+  height: 50px;
+  width: 80%;
+
+}
+.sbus{
+  display: none;
 }
 
 }
@@ -740,6 +759,16 @@
     
     
 }
+}
+
+
+@media all and (max-width:330px){
+  .seaters {
+
+    height: 70px;
+    width: 100%;
+  
+  }
 }
 
 

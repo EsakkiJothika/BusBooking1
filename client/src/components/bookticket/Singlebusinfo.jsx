@@ -6,6 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Payment from "./Payment";
 import { Authstore } from "../../statemanager/auth.store";
+import { apiendpoint } from "../../Data";
 
 const Singlebusinfo = () => {
   const { singlebus, bus } = busStore();
@@ -44,7 +45,7 @@ const Singlebusinfo = () => {
     };
 
     axios
-      .post(`http://localhost:4000/bus/singlebus/${id}/bookbus`, bookdata)
+      .post(`${apiendpoint}/bus/singlebus/${id}/bookbus`, bookdata)
       .then((res) => {
         console.log(res.data);
         setPassengername("");
@@ -101,7 +102,7 @@ const Singlebusinfo = () => {
         <div className="col-lg-8">
           {bus && bus.bustype === "sleeper" && (
             <div className="row justify-content-evenly">
-              <div className="col-sm-5">
+              <div className="col-sm-6 col-lg-5">
                 <div className="row border p-1 p-sm-3 ">
                   <h1>Upper</h1>
                   {bus.seats
@@ -133,7 +134,7 @@ const Singlebusinfo = () => {
                     ))}
                 </div>
               </div>
-              <div className="col-sm-5">
+              <div className="col-sm-6 col-lg-5">
                 <div className="row border p-1 p-sm-3 mt-4 mt-sm-0">
                   <h1>Lower</h1>
                   {bus.seats

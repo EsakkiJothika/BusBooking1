@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
+import { apiendpoint } from "../Data";
 
 
 export let Authstore = create((set)=>({
@@ -20,7 +21,7 @@ export let Authstore = create((set)=>({
           }
       
       
-          axios.post("http://localhost:4000/auth/login",logdata, {withCredentials: true})
+          axios.post(`${apiendpoint}/auth/login`,logdata, {withCredentials: true})
           .then((res)=>{
 
             set(({message:res.data}))
@@ -43,7 +44,7 @@ export let Authstore = create((set)=>({
       };
     
       axios
-        .post("http://localhost:4000/auth/signup", sdata)
+        .post(`${apiendpoint}/auth/signup`, sdata)
         .then((res) => {
           // Set only the message, NOT status
           set(({ message: { status: false, msg: "Signup successful! Please log in." } }));
@@ -59,7 +60,7 @@ export let Authstore = create((set)=>({
 
     checkAuth: () => {
   return axios
-    .get("http://localhost:4000/auth/check", { withCredentials: true })
+    .get(`${apiendpoint}/auth/check`, { withCredentials: true })
     .then((res) => {
       if (res.data.status) {
         set({ message: { status: true }, user: res.data.user });
@@ -74,7 +75,7 @@ export let Authstore = create((set)=>({
 },
 
     logoutHandler : ()=>{
-      axios.post("http://localhost:4000/auth/logout",{},{withCredentials:true})
+      axios.post(`${apiendpoint}/auth/logout`,{},{withCredentials:true})
       .then(()=>{
         set({ user: null, message: { status:false } });
       });

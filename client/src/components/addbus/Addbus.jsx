@@ -61,43 +61,43 @@ const Addbus = () => {
       ac: ac,
     };
 
-    addbus(busdata);
+    addbus(busdata);              // data sent to server
 
  
-    setTname("");
-    setOwnername("");
-    setOwnnum("");
-    setDname("");
-    setDnum("");
-    setFrom("");
-    setTo("");
-    setDate("");
-    setStime("");
-    setEtime("");
-    setSeats("");
-    setRate("");
-    setBtype("");
-    setTprice("");
-    setRate("");
-    setSnacks(false);
-    setWater(false);
-    setTv(false);
-    setBlanket(false);
-    setChargeport(false);
-    setAc(false);
+    // setTname("");
+    // setOwnername("");
+    // setOwnnum("");
+    // setDname("");
+    // setDnum("");
+    // setFrom("");
+    // setTo("");
+    // setDate("");
+    // setStime("");
+    // setEtime("");
+    // setSeats("");
+    // setRate("");
+    // setBtype("");
+    // setTprice("");
+    // setRate("");
+    // setSnacks(false);
+    // setWater(false);
+    // setTv(false);
+    // setBlanket(false);
+    // setChargeport(false);
+    // setAc(false);
 
   };
  
   return (
     <div className="Ainp pb-5">
       <form action="">
-        <div className="container pt-3  p-sm-5">
+        <div className="container pt-3  p-sm-4 p-lg-5">
           <h1 style={{ textAlign: "center" }}>
             <i>Adding Bus Form</i>{" "}
           </h1>
 
           <div className="row justify-content-evenly  ">
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4 ">
               <label htmlFor="">Travels Name</label>
               <input
                 type="text"
@@ -111,7 +111,7 @@ const Addbus = () => {
               />
             </div>
 
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">Owner Name</label>
               <input
                 type="text"
@@ -123,7 +123,7 @@ const Addbus = () => {
                 value={ownername}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">Owner Mobile Number</label>
               <input
                 type="number"
@@ -135,7 +135,7 @@ const Addbus = () => {
                 value={Ownnum}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">Driver Name</label>
               <input
                 type="text"
@@ -147,7 +147,7 @@ const Addbus = () => {
                 value={dname}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">Driver Mobile Number</label>
               <input
                 type="number"
@@ -159,7 +159,7 @@ const Addbus = () => {
                 value={dnum}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">From</label>
               <input
                 type="text"
@@ -171,7 +171,7 @@ const Addbus = () => {
                 value={from}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">To</label>
               <input
                 type="text"
@@ -183,7 +183,7 @@ const Addbus = () => {
                 value={to}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">Date</label>
               <input
                 type="date"
@@ -195,7 +195,7 @@ const Addbus = () => {
                 value={date}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">Start Time</label>
               <input
                 type="time"
@@ -207,7 +207,7 @@ const Addbus = () => {
                 value={stime}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">End Time</label>
               <input
                 type="time"
@@ -219,7 +219,7 @@ const Addbus = () => {
                 value={etime}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">Starting Date</label>
               <input
                 type="date"
@@ -231,7 +231,7 @@ const Addbus = () => {
                 value={date}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">Reaching Date</label>
               <input
                 type="date"
@@ -243,7 +243,7 @@ const Addbus = () => {
                 value={rdate}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="busType">Bus Type</label>
               <select
                 className="form-control"
@@ -256,7 +256,7 @@ const Addbus = () => {
               </select>
             </div>
 
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">Ticket Price</label>
               <input
                 type="number"
@@ -268,7 +268,7 @@ const Addbus = () => {
                 value={tprice}
               />
             </div>
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">Number of Seats</label>
               <input
                 type="number"
@@ -281,7 +281,7 @@ const Addbus = () => {
               />
             </div>
 
-            <div className="col-md-5 col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <label htmlFor="">Ratings</label>
               <input
                 type="number"

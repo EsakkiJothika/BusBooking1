@@ -23,7 +23,7 @@ const Btslide = () => {
       e.stopPropagation();
     } else {
       let traveldata = { from, to, date };
-      findbus(traveldata);
+      findbus(traveldata);        //data sent to server
     }
 
     setValidated(true);
@@ -94,7 +94,7 @@ const Btslide = () => {
             </div>
 
             <div className="row justify-content-center mt-2 mt-sm-4 mt-lg-0">
-              <div className="col-lg-2 col-6 col-sm-4">
+              <div className="col-lg-2  col-sm-4">
                 <button className="testbuttonbt" type="submit">
                   Search
                 </button>

@@ -26,7 +26,7 @@ const Buslist = () => {
         return (
           <div>
             <div className="row justify-content-center m-3 "  key={d._id}>
-              <div className="col-sm-11  list1">
+              <div className="col-md-12 col-lg-11  list1">
                 <div className="row mt-4 bl ">
                   <div className="col-sm-4 ps-4">
                     <h2>{d.travelsname}</h2>
@@ -113,7 +113,7 @@ const Buslist = () => {
                   </div>
                   <div className="col-sm-8 ">
                     <div className="row bl1 justify-content-evenly">
-                      <div className="col-sm-2 ps-3 ">
+                      <div className="col-sm-2  ps-3 ">
                         Journey starts
                         <p>{d.starttime}</p>
                         <p>{capitalize(d.from)}</p>
@@ -123,7 +123,7 @@ const Buslist = () => {
                         <p>{d.endtime}</p>
                         <p>{capitalize(d.to)}</p>
                       </div>
-                      <div className="col-sm-2 ps-3 ">
+                      <div className="col-lg-2 col-md-3 ps-3 ">
                         <button
                           className="btn btn-success"
                           style={{ padding: "7px" }}
@@ -146,8 +146,8 @@ const Buslist = () => {
                         </div> */}
                     </div>
 
-                    <div className="row justify-content-end p-1">
-                      <div className="col-sm-3 Navb">
+                    <div className="row justify-content-end p-1 pb-2">
+                      <div className="col-sm-4 col-md-5 col-lg-3 Navb">
                         <Link to={`/singlebus/${d._id}`}>
                           <button className="testbutton">view seats</button>
                         </Link>

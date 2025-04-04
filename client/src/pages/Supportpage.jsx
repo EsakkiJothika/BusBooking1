@@ -5,8 +5,8 @@ const Supportpage = () => {
   return (
     <div>
       <div className="container  p-5 pb-5">
-        <div className="row justify-content-center pb-5">
-          <div className="col-sm-7 col-lg-6 abt  p-2 p-sm-5" style={{border:'1px solid #BF2EF0', borderRadius:'10px'}}>
+        <div className="row justify-content-center pb-5 ">
+          <div className="col-sm-7 col-md-8 col-lg-6 abt  p-2 p-sm-5" style={{border:'1px solid #BF2EF0', borderRadius:'10px'}}>
             <h3>
               <i>Our Office</i>
             </h3>
@@ -15,7 +15,7 @@ const Supportpage = () => {
                 BusBuddy Headquarters <br />
                 123, Main Street,
                 <br />
-                chennai, TamilNadu - 600 004 <br />
+                Chennai, TamilNadu - 600 004 <br />
                 India
               </p>
             </div>

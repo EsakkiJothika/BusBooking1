@@ -26,7 +26,7 @@ const Signslide = () => {
       const password = formData.get('password');
   
       try {
-        await signhandler(email, username, password);
+        await signhandler(email, username, password);           //data sent to server
         
         // Ensure user is redirected to login page after signup
         navigate('/login');
@@ -48,9 +48,9 @@ const Signslide = () => {
           <div className="row">
             <div className="col-8 sigpag  ">
               
-              <h1 style={{color:'white',fontSize:"60px",textAlign:'center'}} className='text-shadow-drop-left'><i>Unlock the smarter way to travel</i></h1>
+              <h1 style={{color:'white',fontSize:"60px",textAlign:'center',zIndex:'-1'}} className='text-shadow-drop-left'><i>Unlock the smarter way to travel</i></h1>
 
-            <img src={b3} alt="" className='img-fluid slide-right'/>
+            <img src={b3}  alt="" className='mt-5 img-fluid slide-right'/>
             </div>
             
             
@@ -58,7 +58,7 @@ const Signslide = () => {
           </div>
           
         </div>
-        <div className="col-sm-5 col-md-6 col-lg-4 p-4 mt-4 card2">
+        <div className="col-sm-5 col-md-8 col-lg-4 p-4 mt-4 align-self-center card2">
           <p className="text-center">
           <i className='text-black' style={{fontWeight:'500',fontSize:'large', backgroundColor:"#BF2EF0"}}>{message.msg}</i>
           </p>
